@@ -28,6 +28,7 @@ const builtinExtensions = {
     tw: () => require('../extensions/tw'),
     //Aerfaying extensions
     canvas: () => require('../extensions/scratch3_canvas'),
+    community: () => require('../extensions/scratch3_community'),
 };
 
 /**
