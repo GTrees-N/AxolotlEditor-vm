@@ -30,12 +30,23 @@ class Scratch3ScreensizeBlocks {
                     opcode: 'isMobile',
                     blockType: BlockType.BOOLEAN,
                     text: '用户设备是否是移动设备?',
-                    }
+                }
                 ,{
                     opcode: 'isPC',
                     blockType: BlockType.BOOLEAN,
                     text: '用户设备是否是PC设备?',
                 },
+                {
+                    opcode: 'isTouchDeivce',
+                    blockType: BlockType.BOOLEAN,
+                    text: '用户设备是否为触屏设备?',
+                },
+                {
+                    opcode: 'getUserAgent',
+                    blockType: BlockType.REPORTER,
+                    text: '获取用户设备的UserAgent',
+                },
+                
             ],
         };
     }
@@ -54,6 +65,14 @@ class Scratch3ScreensizeBlocks {
         }else{
           return true; // PC端
         }
+    }
+
+    isTouchDeivce(args, util){
+        return 'ontouchstart' in document.documentElement;
+    }
+
+    getUserAgent(args, util){
+        return navigator.userAgent;
     }
 }
 
