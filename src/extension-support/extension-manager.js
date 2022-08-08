@@ -29,6 +29,8 @@ const builtinExtensions = {
     //Aerfaying extensions
     canvas: () => require('../extensions/scratch3_canvas'),
     community: () => require('../extensions/scratch3_community'),
+    //Gtd232 extensions
+    screensize: () => require('../extensions/scratch3_screensize'),
 };
 
 /**

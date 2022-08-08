@@ -123,11 +123,11 @@ class Scratch3CommunityBlocks {
     }
     // isFollower由于技术问题不予支持
     isFollower() {
-        return !!(Blockey.INIT_DATA.userProject && Blockey.INIT_DATA.userProject.isFollower);
+        return true;
     }
     // isProjectLover由于技术问题不予支持
     isProjectLover() {
-        return !!(Blockey.INIT_DATA.userProject && Blockey.INIT_DATA.userProject.isLoved);
+        return true;
     }
 
     isValidUrl(url) {
@@ -136,27 +136,19 @@ class Scratch3CommunityBlocks {
     }
 
     openUrl(args, util) {
-        window.open(args.URL);
+        alert('此时正在打开页面:' + args.URL);
     }
 
     redirectUrl(args, util) {
-        window.location = args.URL;
+        alert('此时正在跳转页面:' + args.URL);
     }
     // pay由于技术问题不予支持
     pay(args, util) {
-        var self = this;
-        self._error = "";
-        return new Promise(resolve => {
-            Blockey.Utils.payInProject(args.AMOUNT, args.ITEM, self.lastPayTime).then(error => {
-                self._error = error || '';
-                self.lastPayTime = new Date().getTime();
-                resolve();
-            });
-        });
+        alert('此时正在使用' + args.AMOUNT +'金币购买:' + args.ITEM)
     }
 
     getError(args, util) {
-        return this._error;
+        return '';
     }
 
 }
