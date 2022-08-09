@@ -29,17 +29,17 @@ class Scratch3ScreensizeBlocks {
             blocks: [{
                     opcode: 'isMobile',
                     blockType: BlockType.BOOLEAN,
-                    text: '用户设备是否是移动设备?',
+                    text: '用户设备是移动设备?',
                 }
                 ,{
                     opcode: 'isPC',
                     blockType: BlockType.BOOLEAN,
-                    text: '用户设备是否是PC设备?',
+                    text: '用户设备是PC设备?',
                 },
                 {
                     opcode: 'isTouchDeivce',
                     blockType: BlockType.BOOLEAN,
-                    text: '用户设备是否为触屏设备?',
+                    text: '用户设备是触屏设备?',
                 },
                 {
                     opcode: 'getUserAgent',
