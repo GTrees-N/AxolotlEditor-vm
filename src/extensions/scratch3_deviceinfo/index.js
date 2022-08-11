@@ -8,7 +8,7 @@ const MathUtil = require('../../util/math-util');
 const RenderedTarget = require('../../sprites/rendered-target');
 const log = require('../../util/log');
 
-class Scratch3ScreensizeBlocks {
+class Scratch3DeviceInfoBlocks {
     constructor(runtime) {
 
 
@@ -42,9 +42,24 @@ class Scratch3ScreensizeBlocks {
                     text: '用户设备是触屏设备?',
                 },
                 {
+                    opcode: 'isDackMode',
+                    blockType: BlockType.BOOLEAN,
+                    text: '用户处于暗黑模式?',
+                },
+                {
                     opcode: 'getUserAgent',
                     blockType: BlockType.REPORTER,
                     text: '获取用户设备的UserAgent',
+                },
+                {
+                    opcode: 'getScreensizex',
+                    blockType: BlockType.REPORTER,
+                    text: '获取用户屏幕横向长度(单位:像素)',
+                    }
+                ,{
+                    opcode: 'getScreensizey',
+                    blockType: BlockType.REPORTER,
+                    text: '获取用户屏幕纵向长度(单位:像素)',
                 },
                 
             ],
@@ -74,6 +89,19 @@ class Scratch3ScreensizeBlocks {
     getUserAgent(args, util){
         return navigator.userAgent;
     }
+
+    isDackMode(args, util){ 
+        return window.matchMedia('(prefers-color-scheme: dark)').matches; //唔唔唔 暗黑模式
+    }
+
+    getScreensizex(args, util) {
+        return screen.width;
+    }
+
+    getScreensizey(args, util) {
+        return screen.height;
+    }
 }
 
-module.exports = Scratch3ScreensizeBlocks;
+
+module.exports = Scratch3DeviceInfoBlocks;

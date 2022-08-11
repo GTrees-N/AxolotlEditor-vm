@@ -30,7 +30,6 @@ const builtinExtensions = {
     canvas: () => require('../extensions/scratch3_canvas'),
     community: () => require('../extensions/scratch3_community'),
     //Gtd232 extensions
-    screensize: () => require('../extensions/scratch3_screensize'),
     deviceinfo: () => require('../extensions/scratch3_deviceinfo'),
 };
 
